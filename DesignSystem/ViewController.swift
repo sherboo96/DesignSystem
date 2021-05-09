@@ -10,6 +10,7 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var lblTitle: UILabel!
+    @IBOutlet weak var gradientView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +25,12 @@ class ViewController: UIViewController {
 //        lblTitle.font = UIFontMetrics(forTextStyle: .body).scaledFont(for: customFont)
 //        lblTitle.adjustsFontForContentSizeCategory = true
         
+        lblTitle.text = "Hello iOS Development"
+        
         lblTitle.font = DesignSystem.TypoGraphy.style1.font
+        
+        lblTitle.textColor = UIColor.setGradientColorFrom(withSize: self.lblTitle.frame.size)
+        gradientView.backgroundColor = UIColor.setGradientColorFrom(withSize: self.gradientView.frame.size)
     }
 
 
